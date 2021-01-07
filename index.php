@@ -1,9 +1,9 @@
 <?php
 
-use AES\DI\Container;
-use AES\Example\LightMenuVariant;
-use AES\Example\Menu;
-use AES\Example\MenuItemsProviderInterface;
+use App\DI\Container;
+use App\Example\LightMenuVariant;
+use App\Example\Menu;
+use App\Example\MenuItemsProviderInterface;
 
 require_once __DIR__ . '/vendor/autoload.php';
 

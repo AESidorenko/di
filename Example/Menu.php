@@ -1,9 +1,13 @@
 <?php
 
-namespace AES\Example;
+namespace App\Example;
 
 class Menu
 {
+    /**
+     * @var MenuItemsProviderInterface
+     */
+    private MenuItemsProviderInterface $itemsProvider;
 
     /**
      * Menu constructor.
@@ -11,6 +15,10 @@ class Menu
      */
     public function __construct(MenuItemsProviderInterface $itemsProvider)
     {
+        $this->itemsProvider = $itemsProvider;
+    }
 
+    public function show()
+    {
     }
 }

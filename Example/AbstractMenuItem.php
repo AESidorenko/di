@@ -1,6 +1,6 @@
 <?php
 
-namespace AES\Example;
+namespace App\Example;
 
 abstract class AbstractMenuItem
 {
