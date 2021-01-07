@@ -1,0 +1,14 @@
+{
+    "name": "aesidorenko/di",
+    "description": "Dependency injection container",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Anton E. Sidorenko",
+            "email": "asidorenko.ca@gmail.com"
+        }
+    ],
+    "require": {
+    }
+}
