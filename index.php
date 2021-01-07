@@ -1,9 +1,16 @@
 <?php
 
+use AES\DI\Container;
+use AES\Example\LightMenuVariant;
+use AES\Example\Menu;
+use AES\Example\MenuItemsProviderInterface;
+
 require_once __DIR__ . '/vendor/autoload.php';
 
-$container = new \AES\DI\Container();
+$container = new Container();
 
-$menu = $container->get('\AES\Example\Menu');
+$container->add(MenuItemsProviderInterface::class, LightMenuVariant::class);
+
+$menu = $container->get(Menu::class);
 
 $menu->show();
