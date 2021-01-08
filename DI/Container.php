@@ -15,8 +15,6 @@ class Container
 
     private array $items = [];
 
-    // todo: make a factory to create a container
-
     public function add(string $key, $target = null): void
     {
         if (array_key_exists('key', $this->items)) {

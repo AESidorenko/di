@@ -4,10 +4,7 @@ namespace App\Example;
 
 class Menu
 {
-    /**
-     * @var MenuItemsProviderInterface
-     */
-    private MenuItemsProviderInterface $itemsProvider;
+    private array $items = [];
 
     /**
      * Menu constructor.
@@ -15,14 +12,16 @@ class Menu
      */
     public function __construct(MenuItemsProviderInterface $itemsProvider)
     {
-        $this->itemsProvider = $itemsProvider;
+        /** @var AbstractMenuItem $item */
+        foreach ($itemsProvider->getItems() as $item) {
+            $this->items[] = sprintf('%s, $%.2f', $item->getTitle(), $item->getPrice());
+        }
     }
 
     public function show()
     {
-        /** @var AbstractMenuItem $item */
-        foreach ($this->itemsProvider->getItems() as $item) {
-            printf('%s, $%.2f' . PHP_EOL, $item->getTitle(), $item->getPrice());
+        foreach ($this->items as $item) {
+            echo $item . PHP_EOL;
         }
     }
 }
