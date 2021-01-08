@@ -28,7 +28,7 @@ class Container
         $targetType = self::detectTargetType($target);
         switch ($targetType) {
             case self::TARGET_TYPE_CLASS:
-                $this->items[$key] = self::createInstance($target);
+                $this->items[$key] = $this->createInstance($target);
 
                 return;
 
@@ -48,10 +48,6 @@ class Container
         $this->add($key);
 
         return $this->items[$key];
-    }
-
-    public function call($method)
-    {
     }
 
     private static function detectTargetType($target): string
@@ -92,7 +88,7 @@ class Container
 
             $key = $arg->getClass()->getName();
             if (!array_key_exists($key, $this->items)) {
-                $instanceArgs[] = self::createInstance($key);
+                $instanceArgs[] = $this->createInstance($key);
 
                 continue;
             }

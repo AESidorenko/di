@@ -20,5 +20,9 @@ class Menu
 
     public function show()
     {
+        /** @var AbstractMenuItem $item */
+        foreach ($this->itemsProvider->getItems() as $item) {
+            printf('%s, $%.2f' . PHP_EOL, $item->getTitle(), $item->getPrice());
+        }
     }
 }
