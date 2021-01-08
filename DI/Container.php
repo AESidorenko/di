@@ -75,7 +75,7 @@ class Container
         $args         = $constructor->getParameters();
         foreach ($args as $arg) {
             if (!$arg->hasType() || $arg->getType()->isBuiltin()) {
-                $key = $arg->getName();
+                $key = '$' . $arg->getName();
                 if (!array_key_exists($key, $this->items)) {
                     throw new CannotGuessAutowiringException($key);
                 }

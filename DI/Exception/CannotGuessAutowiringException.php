@@ -11,7 +11,7 @@ class CannotGuessAutowiringException extends ContainerException
      */
     public function __construct(string $key)
     {
-        $message = sprintf('Cannot guess type/class for autowiring: $%s', $key);
+        $message = sprintf('Cannot guess type/class for autowiring: %s', $key);
 
         parent::__construct($message);
     }
